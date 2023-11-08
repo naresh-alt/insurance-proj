@@ -4,6 +4,10 @@
   tasks:
   - name: update apt
     command: sudo apt-get update
+    
+  - name: Configure pending packages
+    become: yes
+    command: dpkg --configure -a
 
   - name: install docker
     command: sudo apt install -y docker.io
