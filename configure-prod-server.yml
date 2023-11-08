@@ -1,13 +1,13 @@
 ---
 - hosts: prod-server
   become: true
-  tasks:
-  - name: update apt
-    command: sudo apt-get update
-    
+  tasks: 
   - name: Configure pending packages
     become: yes
     command: dpkg --configure -a
+
+  - name: update apt
+    command: sudo apt-get update
 
   - name: install docker
     command: sudo apt install -y docker.io
