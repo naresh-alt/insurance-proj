@@ -1,5 +1,5 @@
 ---
-- hosts: prod-server
+- hosts: Test-server
   become: true
   tasks:
     - name: Configure pending packages
