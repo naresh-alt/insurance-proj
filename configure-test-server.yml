@@ -17,3 +17,10 @@
 
     - name: deploy insureme application
       command: sudo docker run -itd -p 8081:8081 shubhamkushwah123/insure-me:1.0
+    - name: Copy final-project.jar to remote host
+      copy:
+      src: final-project.jar  # Assuming the file is in the same directory as your Ansible playbook
+      dest: /home/ubuntu/final-project.jar
+      owner: ubuntu
+      group: ubuntu
+      mode: '0644'  # Optional: Set the permissions of the copied file
